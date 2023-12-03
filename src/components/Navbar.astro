@@ -1,0 +1,94 @@
+---
+
+---
+
+<div class="relative">
+    <div
+        class="flex flex-wrap justify-between dark:text-bunker-50 items-center fixed h-[72px] w-full bg-white shadow-md dark:bg-shadow px-16 z-50 top-0 right-0"
+    >
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-device-desktop-code"
+            width="40"
+            height="40"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+                d="M12.5 16h-8.5a1 1 0 0 1 -1 -1v-10a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v8"
+            ></path><path d="M7 20h4"></path><path d="M9 16v4"></path><path
+                d="M20 21l2 -2l-2 -2"></path><path d="M17 17l-2 2l2 2"
+            ></path></svg
+        >
+
+        <button class="md:hidden" id="toogle-button">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-menu-2"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+                    d="M4 6l16 0"></path><path d="M4 12l16 0"></path><path
+                    d="M4 18l16 0"></path></svg
+            >
+        </button>
+
+        <ul class="hidden md:flex md:space-x-4" id="menu">
+            <li class="md:text-xl text-4xl my-4 md:my-0 cursor-pointer">
+                <a href="#home">Home</a>
+            </li>
+            <li class="md:text-xl text-4xl my-4 md:my-0 cursor-pointer">
+                <a href="#about">About</a>
+            </li>
+            <li class="md:text-xl text-4xl  my-4 md:my-0 cursor-pointer">
+                <a href="#career">Career</a>
+            </li>
+            <li class="md:text-xl text-4xl my-4 md:my-0 cursor-pointer">
+                <a href="#projects">Projects</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script>
+ const toggleButton = document.getElementById('toogle-button') as HTMLButtonElement;
+const menu = document.getElementById('menu') as HTMLUListElement;
+const menuItems = Array.from(menu.getElementsByTagName('li'));
+
+toggleButton.addEventListener('click', toggleMenu);
+
+menuItems.forEach(item => {
+    item.addEventListener('click', () => {
+        if (window.innerWidth <= 767) {
+            toggleMenu();
+        }
+    });
+});
+
+function toggleMenu() {
+    if (window.innerWidth <= 767) {
+        menu.classList.toggle('hidden');
+        menu.classList.toggle('flex');
+        menu.classList.toggle('flex-col');
+        menu.classList.toggle('w-full');
+        menu.classList.toggle('h-screen');
+        menu.classList.toggle('text-center');
+        menu.classList.toggle('z-50');
+        menu.classList.toggle('absolute');
+        menu.classList.toggle('left-0');
+        menu.classList.toggle('top-16');
+        menu.classList.toggle('right-0');
+        menu.classList.toggle('bg-white');
+        menu.classList.toggle('dark:bg-shadow');
+    }
+}
+</script>

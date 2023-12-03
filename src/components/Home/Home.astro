@@ -1,0 +1,101 @@
+---
+import { Image } from "astro:assets";
+import srcBackgroindDiscord from "../../assets/background-dc-image.gif";
+import Medals from "../Medals.astro";
+import ImageIcon from "../ImageIcon.astro";
+import Conocimientos from "../Conocimientos.astro";
+import AboutMe from "../AboutMe.astro";
+import Saludo from "./Saludo.svelte";
+---
+
+<div class="home flex flex-col md:flex-row items-center md:items-center justify-center md:justify-around w-full" id="home">
+    <div class="md:w-[400px] h-[300px]">
+        <Saludo client:only />
+    </div>
+    <div
+        
+    >
+        <div
+            id="about"
+            class="relative flex flex-col justify-center items-center md:min-w-[450px] drop-shadow-[0_0_0.6rem_#3269eb70] md:w-[400px] rounded-xl bg-bunker-900"
+        >
+            <div class="w-full h-[140px]">
+                <Image
+                    src={srcBackgroindDiscord}
+                    alt="Background fondo card discord"
+                    class="object-cover w-full h-full rounded-t-xl"
+                />
+            </div>
+
+            <div
+                class="left-6 top-36 absolute w-[100px] h-[100px] rounded-full bg-bunker-100 border-4 border-bunker-900 -mt-16"
+            >
+                <img
+                    class="w-full h-full object-fill rounded-full"
+                    src="https://cdn.discordapp.com/avatars/500873174578233364/7e8337c3e36d5f3dc5e51e3660f9b771.webp?size=80"
+                />
+            </div>
+            <Medals />
+            <div
+                class="md:w-[412px] mx-2 md:mx-0 rounded-xl bg-bunker-100 p-4 flex flex-col mb-4"
+            >
+                <h2 class="text-lg font-semibold">SebRN</h2>
+                <span class="text-base font-medium">@armonyrn</span>
+                <span class="text-base font-medium text-bunker-500">He/Him</span
+                >
+                <span class="text-base font-medium text-bunker-500 flex">
+                    <ImageIcon
+                        zelda="https://cdn.discordapp.com/emojis/809833332438859816.webp?size=44&quality=lossless"
+                    />
+                     coding on
+                    <span class="font-semibold ml-1 text-bunker-950">
+                        Android Studio</span
+                    >
+                </span>
+                <div class="w-full h-[1px] bg-bunker-500 my-2"></div>
+                <AboutMe />
+                <Conocimientos />
+                <span class="font-bold mt-3 mb-1">Note</span>
+                <span class="text-sm font-[400]"
+                    >Website made with Astro and TailwindCSS</span
+                >
+                <div
+                    class="flex items-center min-h-[50px] border rounded-md my-4 px-2"
+                >
+                    <textarea placeholder="Send a message to me"></textarea>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="icon icon-tabler icon-tabler-send"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        stroke-width="2"
+                        stroke="currentColor"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        ><path stroke="none" d="M0 0h24v24H0z" fill="none"
+                        ></path><path d="M10 14l11 -11"></path><path
+                            d="M21 3l-6.5 18a.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a.55 .55 0 0 1 0 -1l18 -6.5"
+                        ></path></svg
+                    >
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    textarea {
+        resize: none;
+        height: 99%;
+        width: 99%;
+        border: none;
+        padding: 0.5rem;
+        font-size: 0.9rem;
+        background: transparent;
+    }
+    textarea:focus {
+        outline: none;
+    }
+</style>
