@@ -12,9 +12,12 @@ const { title } = Astro.props;
 <html lang="en" class="dark">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta
+			name="description"
+			content="Mobile developer portfolio - Johnny Miguel Sebastian Roque Neciosup"
+		/>
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.png" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -34,20 +37,18 @@ const { title } = Astro.props;
 			<Footer />
 		</footer>
 	</body>
-	
 </html>
 <style is:global>
 	html {
 		font-family: system-ui, sans-serif;
 		background: #13151a;
-		font-family: 'Cabin', sans-serif;
+		font-family: "Cabin", sans-serif;
 		scroll-behavior: smooth;
+		max-width: 100%;
+		overflow-x: hidden;
 	}
 	body {
 		margin: 0;
 		padding: 0;
-		width: 100vw;
 	}
-
-
 </style>
