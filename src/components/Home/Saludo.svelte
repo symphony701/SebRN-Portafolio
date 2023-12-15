@@ -9,12 +9,10 @@ onMount(() => {
     const typed = new Typed("#typed", {
         strings: [
             "a mobile developer",
-            "a frontend developer",
             "a gamer",
             "an anime fan",
-            
         ],
-        typeSpeed: 50,
+        typeSpeed: 60,
         backSpeed: 50,
         loop: true,
         showCursor: false,
